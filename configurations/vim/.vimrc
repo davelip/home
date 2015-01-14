@@ -30,6 +30,7 @@ if exists(':Bundle')
     "Bundle 'rking/ag.vim'
     "Bundle 'othree/html5.vim.git'
     "Bundle 'SirVer/ultisnips.git'
+    Plugin 'shawncplus/phpcomplete.vim'
 end
 "}}}
 
@@ -178,7 +179,7 @@ nmap ,lf :call FacadeLookup()<cr>
  
 " Familiar commands for file/symbol browsing
 map <D-p> :CtrlP<cr>
-map <C-r> :CtrlPBufTag<cr>
+map <D-r> :CtrlPBufTag<cr>
  
 " I don't want to pull up these folders/files when calling CtrlP
 set wildignore+=*/vendor/**
