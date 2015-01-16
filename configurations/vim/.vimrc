@@ -32,7 +32,7 @@ if exists(':Bundle')
     "Bundle 'SirVer/ultisnips.git'
     Plugin 'shawncplus/phpcomplete.vim'
     Bundle 'vim-scripts/Conque-Shell'
-    Plugin 'vim-scripts/XDebug-DBGp-client-for-PHP'
+    Plugin 'debugger.vim'
 end
 "}}}
 
