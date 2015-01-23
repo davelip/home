@@ -88,6 +88,7 @@ autocmd BufWritePre !*.xml silent! %s/[\r \t]\+$//
 autocmd BufWritePre *.php :%s/\s\+$//e
 " retab to replace tab by space when you write
 autocmd BufWritePre *.php :set et|retab
+autocmd BufWritePre *.php :retab
 
 autocmd BufNewFile,BufRead *.twig set filetype=twig
 autocmd BufNewFile,BufRead *.less set filetype=less
