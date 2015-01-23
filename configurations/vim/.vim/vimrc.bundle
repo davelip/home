@@ -1,0 +1,36 @@
+"{{{ Vundle Bundles!
+if exists(':Bundle')
+    Bundle 'gmarik/vundle'
+
+    Bundle 'Buffergator'
+    
+    Bundle 'minibufexpl.vim'
+
+    Bundle 'toggle_mouse'
+
+    Bundle 'Lokaltog/vim-easymotion'
+
+    Bundle 'scrooloose/nerdtree.git'
+
+    Bundle 'kien/ctrlp.vim'
+
+    Plugin 'shawncplus/phpcomplete.vim'
+
+    Bundle 'vim-scripts/Conque-Shell'
+
+    "Plugin 'debugger.vim'
+    Bundle 'wincent/Command-T'
+    Bundle 'stephpy/vim-php-cs-fixer'
+
+    "Bundle 'powerline/powerline'
+
+    Bundle "MarcWeber/vim-addon-mw-utils"
+    Bundle "tomtom/tlib_vim"
+    Bundle "garbas/vim-snipmate"
+    Bundle "honza/vim-snippets"
+
+    Bundle "vim-scripts/taglist.vim"
+
+    Bundle "ervandew/supertab"
+end
+"}}}
