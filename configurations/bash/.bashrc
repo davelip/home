@@ -117,6 +117,8 @@ if ! shopt -oq posix; then
 fi
 [ -r /home/david/.byobu/prompt ] && . /home/david/.byobu/prompt   #byobu-prompt#
 
+export EDITOR="/usr/bin/vi"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:~/.composer/vendor/bin:~/bin:$PATH"
 if [ -f ~/.bash_path.local ]; then
