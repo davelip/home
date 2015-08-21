@@ -32,5 +32,7 @@ if exists(':Bundle')
     Bundle "vim-scripts/taglist.vim"
 
     Bundle "ervandew/supertab"
+
+    Bundle 'chase/vim-ansible-yaml'
 end
 "}}}

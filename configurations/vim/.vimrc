@@ -88,7 +88,7 @@ autocmd BufWritePre !*.xml silent! %s/[\r \t]\+$//
 autocmd BufWritePre *.php :%s/\s\+$//e
 " retab to replace tab by space when you write
 autocmd BufWritePre *.php :set et|retab
-autocmd BufWritePre *.php :retab
+" autocmd BufWritePre *.php :retab
 
 autocmd BufNewFile,BufRead *.twig set filetype=twig
 autocmd BufNewFile,BufRead *.less set filetype=less
@@ -272,7 +272,8 @@ nmap :ed :edit %:p:h/
 nmap ,todo :e todo.txt<cr>
 
 " Useful to toggle paste mode"
-set pastetoggle=<leader>pset tags+=vendor.tags
+set pastetoggle=<leader>p
+
 set tags+=vendor.tags
 
 if filereadable(expand("~/.vimrc.local.after"))
