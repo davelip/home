@@ -34,5 +34,7 @@ if exists(':Bundle')
     Bundle "ervandew/supertab"
 
     Bundle 'chase/vim-ansible-yaml'
+
+    Bundle 'slim-template/vim-slim.git'
 end
 "}}}
