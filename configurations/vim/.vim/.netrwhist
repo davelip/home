@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/var/www/Vagrant/lemmon/workstation/app/forum-pa/.git'
+let g:netrw_dirhist_2='/var/www/Vagrant/ansible/ansible/roles'
+let g:netrw_dirhist_3='/var/www/Vagrant/ansible/ansible/roles/nginx/tasks'
+let g:netrw_dirhist_4='/var/www/Vagrant/ansible/ansible/roles/nginx/templates'
+let g:netrw_dirhist_5='/var/www/Vagrant/ansible2/ansible'
+let g:netrw_dirhist_6='/var/www/Vagrant/ansible_ruby/ansible'
+let g:netrw_dirhist_7='/var/www/Vagrant/ansible_ruby'
+let g:netrw_dirhist_8='/var/www/Vagrant/ansible_php/ansible'

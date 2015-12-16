@@ -32,12 +32,18 @@ set copyindent                  " copy the previous indentation on autoindenting
 set cursorline
 set encoding=utf-8
 set expandtab                   " expand tabs by default (overloadable per file type later)
+set foldenable          " enable folding
+set foldlevelstart=10   " open most folds by default
+set foldlevel=0   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+set foldmethod=marker   " fold based on indent level
 set hidden
 set history=256                 " keep 50 lines of command line history
-set hlsearch
+set hlsearch                    " highlight matches
 set ignorecase                  " ignore case when searching
 set incsearch                  " do incremental searching
 set laststatus=2               " Always show the statusline
+set lazyredraw          " redraw only when we need to.http://dougblack.io/words/a-good-vimrc.html
 set linespace=15
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
@@ -53,6 +59,7 @@ set ruler                      " show the cursor position all the time
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set shiftwidth=4                " number of spaces to use for autoindenting
 set showcmd                     "Show (partial) command in the status line
+set showmatch           " highlight matching [{()}] http://dougblack.io/words/a-good-vimrc.html
 set showmode                    " always show what mode we're currently editing in
 set smartcase                   " ignore case if search pattern is all lowercase,
 set smarttab
@@ -65,9 +72,11 @@ set title                      " show title in console title bar
 set ttyfast                    " smoother changes
 set vb t_vb=".
 set visualbell           " don't beep
+set wildmenu           " visual autocomplete for command menu http://dougblack.io/words/a-good-vimrc.html
 
 "colorscheme vividchalk
-colorscheme xoria256
+"colorscheme xoria256
+colorscheme badwolf
 
 
 " In many terminal emulators the mouse works just fine, thus enable it.
@@ -163,6 +172,13 @@ let g:SuperTabCompletionContexts =
 " Mapping
 " ===================================
 
+" http://dougblack.io/words/a-good-vimrc.html
+" turn off search highlight 
+nnoremap <leader><space> :nohlsearch<CR>
+" space open/closes folds
+nnoremap <space> za
+" /http://dougblack.io/words/a-good-vimrc.html
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -251,6 +267,7 @@ map <leader>e :set expandtab<CR>
 " If you don't want to have validation
 map <leader>s :SyntasticToggleMode<CR>
 
+" CTRLP {{{
 " CtrlP Stuff
  
 " Familiar commands for file/symbol browsing
@@ -259,7 +276,6 @@ map <D-r> :CtrlPBufTag<cr>
  
 " I don't want to pull up these folders/files when calling CtrlP
 set wildignore+=*/vendor/**
-set wildignore+=*/public/forum/**
  
 " Open splits
 nmap vs :vsplit<cr>
@@ -281,29 +297,50 @@ if filereadable(expand("~/.vimrc.local.after"))
 endif
 
 highlight Search cterm=underline
- 
+
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+" Only if ag is installed
+"let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Easy motion stuff
 let g:EasyMotion_leader_key = '<Leader>'
- 
+
 " Powerline (Fancy thingy at bottom stuff)
 let g:Powerline_symbols = 'fancy'
- 
+
+" }}}
+
+
+" TMUX {{{
+" allows cursor change in tmux mode
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+" }}}
+
 """""""""""""""""
 " Abbreviations "
 """""""""""""""""
 
-abbrev pft PHPUnit_Framework_TestCase
+"abbrev pft PHPUnit_Framework_TestCase
  
-abbrev gm !php artisan generate:model
-abbrev gc !php artisan generate:controller
-abbrev gmig !php artisan generate:migration
+"abbrev gm !php artisan generate:model
+"abbrev gc !php artisan generate:controller
+"abbrev gmig !php artisan generate:migration
  
  
 """"""""
 " CALL "
 """"""""
 
+" Laravel {{{
 " Concept - load underlying class for Laravel
 function! FacadeLookup()
     let facade = input('Facade Name: ')
@@ -313,25 +350,78 @@ function! FacadeLookup()
 \       'File': 'Filesystem/Filesystem.php',
 \       'Eloquent': 'Database/Eloquent/Model.php'
 \   }
- 
+
     execute ":edit vendor/laravel/framework/src/Illuminate/" . classes[facade]
 endfunction
 nmap ,lf :call FacadeLookup()<cr>
- 
+
 " Prepare a new PHP class
 function! Class()
     let name = input('Class name? ')
     let namespace = input('Any Namespace? ')
- 
+
     if strlen(namespace)
         exec 'normal i<?php namespace ' . namespace . ';
     else
         exec 'normal i<?php
     endif
- 
+
     " Open class
     exec 'normal iclass ' . name . ' {^M}^[O^['
-    
+
     exec 'normal i^M    public function __construct()^M{^M ^M}^['
 endfunction
 nmap ,1  :call Class()<cr>
+" }}}
+
+
+" @http://dougblack.io/words/a-good-vimrc.html Function {{{
+augroup configgroup
+    autocmd!
+    autocmd VimEnter * highlight clear SignColumn
+    "autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+    "            \:call <SID>StripTrailingWhitespaces()
+    autocmd FileType java setlocal noexpandtab
+    autocmd FileType java setlocal list
+    autocmd FileType java setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType java setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType php setlocal expandtab
+    autocmd FileType php setlocal list
+    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType ruby setlocal tabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
+    autocmd FileType ruby setlocal softtabstop=2
+    autocmd FileType ruby setlocal commentstring=#\ %s
+    autocmd FileType python setlocal commentstring=#\ %s
+    autocmd BufEnter *.cls setlocal filetype=java
+    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+    autocmd BufEnter Makefile setlocal noexpandtab
+    autocmd BufEnter *.sh setlocal tabstop=2
+    autocmd BufEnter *.sh setlocal shiftwidth=2
+    autocmd BufEnter *.sh setlocal softtabstop=2
+augroup END
+
+
+" toggle between number and relativenumber
+function! ToggleNumber()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+
+" strips trailing whitespace at the end of files. this
+" is called on buffer write in the autogroup above.
+function! <SID>StripTrailingWhitespaces()
+    " save last search & cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
+" }}}

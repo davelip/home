@@ -4,6 +4,19 @@
         "pinned": true,
         "icon": "{default}"
     },
+    "https://bebox.fullsix.it": {
+        "title": "{title}",
+        "pinned": true
+    },
+    "http://sia.softecspa.it/": {
+        "title": "{title}",
+        "pinned": true,
+        "icon": "http://sia.softecspa.it/img/sia.ico"
+    },
+    "https://trello.com/": {
+        "title": "{title}",
+        "pinned": true
+    },
     "https://softec.slack.com/messages/special-project/": {
         "title": "{title}",
         "pinned": true,
@@ -14,12 +27,7 @@
         "pinned": true,
         "icon": "http://trac.softecspa.it/communitysix/chrome/common/trac.ico"
     },
-    "http://sia.softecspa.it/": {
-        "title": "{title}",
-        "pinned": true,
-        "icon": "http://sia.softecspa.it/img/sia.ico"
-    },
-    "https://trello.com/": {
+    "https://web.whatsapp.com/": {
         "title": "{title}",
         "pinned": true
     }

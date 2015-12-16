@@ -3,7 +3,7 @@ if exists(':Bundle')
     Bundle 'gmarik/vundle'
 
     Bundle 'Buffergator'
-    
+
     Bundle 'minibufexpl.vim'
 
     Bundle 'toggle_mouse'
@@ -36,5 +36,7 @@ if exists(':Bundle')
     Bundle 'chase/vim-ansible-yaml'
 
     Bundle 'slim-template/vim-slim.git'
+
+    Bundle 'sjl/badwolf'
 end
 "}}}
