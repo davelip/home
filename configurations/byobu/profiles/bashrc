@@ -30,8 +30,9 @@ git_branch() {
   fi
 }
 svn_branch() {
-  local branch=$(svn info 2>/dev/null | sed -ne 's#^Relative URL: ##p' | xarg basename)
+  local branch=$(svn info 2>/dev/null | sed -ne 's#^Relative URL: ##p' )
   if [[ -n $branch ]]; then
+    branch=`basename $branch`
     echo -e " «$branch» "
   fi
 }
