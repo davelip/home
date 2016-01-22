@@ -212,6 +212,9 @@ nmap 75 :vertical resize 120<cr>
  
 nmap <C-n> :NERDTreeToggle<cr>
 
+" @see http://superuser.com/questions/195022/vim-how-to-synchronize-nerdtree-with-current-opened-tab-file-path
+map <leader>r :NERDTreeFind<cr>
+
 "Load the current buffer in Chrome
 nmap ,c :!open -a Google\ Chrome<cr>
  
