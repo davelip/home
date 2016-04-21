@@ -35,8 +35,10 @@ if exists(':Bundle')
 
     Bundle 'chase/vim-ansible-yaml'
 
-    Bundle 'slim-template/vim-slim.git'
+    "Bundle 'slim-template/vim-slim.git'
 
     Bundle 'sjl/badwolf'
+
+    Bundle 'joonty/vdebug.git'
 end
 "}}}

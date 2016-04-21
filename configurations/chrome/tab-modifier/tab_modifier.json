@@ -1,0 +1,108 @@
+{
+    "rules": [
+        {
+            "name": "Gmail",
+            "url_fragment": "https://mail.google.com/mail/u/0/#inbox",
+            "tab": {
+                "title": "{title}",
+                "icon": "chrome/default.png",
+                "pinned": true,
+                "protected": false,
+                "unique": true,
+                "muted": false,
+                "url_matcher": null
+            }
+        },
+        {
+            "name": "BeBox",
+            "url_fragment": "https://bebox.fullsix.it/",
+            "tab": {
+                "title": "{title}",
+                "icon": null,
+                "pinned": true,
+                "protected": false,
+                "unique": true,
+                "muted": false,
+                "url_matcher": null
+            }
+        },
+        {
+            "name": "Trello",
+            "url_fragment": "https://trello.com/",
+            "tab": {
+                "title": "{title}",
+                "icon": null,
+                "pinned": true,
+                "protected": false,
+                "unique": false,
+                "muted": false,
+                "url_matcher": null
+            }
+        },
+        {
+            "name": "Slack",
+            "url_fragment": "https://softec.slack.com/messages/special-project/",
+            "tab": {
+                "title": "{title}",
+                "icon": "https://slack.global.ssl.fastly.net/272a/img/icons/favicon-32.png",
+                "pinned": true,
+                "protected": false,
+                "unique": true,
+                "muted": false,
+                "url_matcher": null
+            }
+        },
+        {
+            "name": "TRAC",
+            "url_fragment": "http://trac.softecspa.it/",
+            "tab": {
+                "title": "{title}",
+                "icon": "http://trac.softecspa.it/communitysix/chrome/common/trac.ico",
+                "pinned": true,
+                "protected": false,
+                "unique": false,
+                "muted": false,
+                "url_matcher": null
+            }
+        },
+        {
+            "name": "Whatspp",
+            "url_fragment": "https://web.whatsapp.com/",
+            "tab": {
+                "title": "{title}",
+                "icon": null,
+                "pinned": true,
+                "protected": false,
+                "unique": true,
+                "muted": false,
+                "url_matcher": null
+            }
+        },
+        {
+            "name": "Skype",
+            "url_fragment": "https://web.skype.com/it/",
+            "tab": {
+                "title": "{title}",
+                "icon": null,
+                "pinned": true,
+                "protected": false,
+                "unique": true,
+                "muted": false,
+                "url_matcher": null
+            }
+        },
+        {
+            "name": "Hangout",
+            "url_fragment": "https://hangouts.google.com/",
+            "tab": {
+                "title": null,
+                "icon": null,
+                "pinned": true,
+                "protected": false,
+                "unique": true,
+                "muted": false,
+                "url_matcher": null
+            }
+        }
+    ]
+}

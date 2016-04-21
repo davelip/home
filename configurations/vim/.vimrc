@@ -129,8 +129,8 @@ else
     let g:ctrlp_working_path_mode = 0
 
     let g:ctrlp_custom_ignore = {
-                \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|log$',
-                \ 'file': '\.exe$\|\.so$\|\.dll$\|\.jpg$\|\.gif$\|\.png$',
+                \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|log$\|test$',
+                \ 'file': '\.exe$\|\.so$\|\.dll$\|\.jpg$\|\.gif$\|\.png\|.xls$',
                 \ }
 endif
 
