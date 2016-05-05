@@ -104,13 +104,14 @@ t_branch() {
 }
 
 # Ensure that we're in bash, in a byobu environment
+echo $BASH;
 if [ -n "$BASH" ]; then
   byobu_prompt_status() { local e=$?; [ $e != 0 ] && echo -e "$e "; }
   [ -n "$BYOBU_CHARMAP" ] || BYOBU_CHARMAP=$(locale charmap 2>/dev/null || echo)
   case "$BYOBU_DISTRO" in
     "Ubuntu")
       # Use Ubuntu colors (grey / aubergine / orange)
-      PS1="${debian_chroot:+($debian_chroot)}\[\e[38;5;202m\]\$(byobu_prompt_status)\[\e[38;5;245m\]\u\[\e[00m\]@\[\e[38;5;172m\]\h\[\e[00m\] \[\e[38;5;141m\]\$(git_branch)\[\e[00m\]\[\e[38;5;5m\]\w\[\e[00m\]: "
+      PS1="${debian_chroot:+($debian_chroot)}\[\e[38;5;202m\]\$(byobu_prompt_status)\[\e[38;5;245m\]\u\[\e[00m\]@\[\e[38;5;172m\]\h\[\e[00m\] \[\e[38;5;141m\]\$(parse_git_branch)\$(parse_svn_branch)\[\e[00m\]\[\e[38;5;5m\]\w\[\e[00m\]: "
       export GREP_COLORS="ms=01;38;5;202:mc=01;31:sl=:cx=:fn=01;38;5;132:ln=32:bn=32:se=00;38;5;242"
       export LESS_TERMCAP_mb=$(printf '\e[01;31m')       # enter blinking mode – red
       export LESS_TERMCAP_md=$(printf '\e[01;38;5;180m') # enter double-bright mode – bold light orange
@@ -170,7 +171,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-[ -r /home/david/.byobu/prompt ] && . /home/david/.byobu/prompt   #byobu-prompt#
+#[ -r /home/david/.byobu/prompt ] && . /home/david/.byobu/prompt   #byobu-prompt#
 
 export EDITOR="/usr/bin/vi"
 
