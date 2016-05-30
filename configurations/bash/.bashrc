@@ -104,7 +104,6 @@ t_branch() {
 }
 
 # Ensure that we're in bash, in a byobu environment
-echo $BASH;
 if [ -n "$BASH" ]; then
   byobu_prompt_status() { local e=$?; [ $e != 0 ] && echo -e "$e "; }
   [ -n "$BYOBU_CHARMAP" ] || BYOBU_CHARMAP=$(locale charmap 2>/dev/null || echo)
@@ -148,6 +147,12 @@ alias l='ls -CF'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias v='cd /var/www/Vagrant';
+alias vup='vagrant up';
+alias vht='vagrant halt';
+alias vsh='vagrant ssh';
+alias vbu='vagrant box update';
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
