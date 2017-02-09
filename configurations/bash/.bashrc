@@ -130,13 +130,13 @@ fi
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls --color=always'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+    alias grep='grep --color=always'
+    alias fgrep='fgrep --color=always'
+    alias egrep='egrep --color=always'
 fi
 
 # some more ls aliases
@@ -148,11 +148,17 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# Vagrant Alias
 alias v='cd /var/www/Vagrant';
 alias vup='vagrant up';
 alias vht='vagrant halt';
 alias vsh='vagrant ssh';
 alias vbu='vagrant box update';
+
+# clipboard alias 
+# http://jetpackweb.com/blog/2009/09/23/pbcopy-in-ubuntu-command-line-clipboard/
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -186,3 +192,9 @@ if [ -f ~/.bash_path.local ]; then
     . ~/.bash_path.local
 fi
 alias homestead=~/.composer/vendor/bin/homestead
+
+PATH="/home/david/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/david/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/david/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/david/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/david/perl5"; export PERL_MM_OPT;
