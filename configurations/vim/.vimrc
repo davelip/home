@@ -205,10 +205,10 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
  
 "Resize vsplit
-nmap <C-v> :vertical resize +5<cr>
-nmap 25 :vertical resize 40<cr>
-nmap 50 <c-w>=
-nmap 75 :vertical resize 120<cr>
+"nmap <C-v> :vertical resize +5<cr>
+"nmap 25 :vertical resize 40<cr>
+"nmap 50 <c-w>=
+"nmap 75 :vertical resize 120<cr>
  
 nmap <C-n> :NERDTreeToggle<cr>
 
