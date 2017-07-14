@@ -40,5 +40,7 @@ if exists(':Bundle')
     Bundle 'sjl/badwolf'
 
     Bundle 'joonty/vdebug.git'
+
+    Plugin 'editorconfig/editorconfig-vim'
 end
 "}}}

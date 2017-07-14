@@ -197,6 +197,9 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 "Auto change directory to match current file ,cd
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
  
+" http://vim.wikia.com/wiki/Automatic_word_wrapping
+nmap <leader>w :set wrap linebreak nolist<cr>
+
 "easier window navigation
  
 nmap <C-h> <C-w>h
