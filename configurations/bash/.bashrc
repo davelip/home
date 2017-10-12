@@ -186,15 +186,10 @@ fi
 
 export EDITOR="/usr/bin/vi"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:~/.composer/vendor/bin:~/bin:$PATH"
+export PATH="/usr/local/heroku/bin:~/.composer/vendor/bin:~/bin:${PATH:+:${PATH}}";
+alias homestead=~/.composer/vendor/bin/homestead
+
 if [ -f ~/.bash_path.local ]; then
     . ~/.bash_path.local
 fi
-alias homestead=~/.composer/vendor/bin/homestead
 
-PATH="/home/david/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/david/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/david/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/david/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/david/perl5"; export PERL_MM_OPT;
