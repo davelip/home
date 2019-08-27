@@ -74,6 +74,13 @@ set vb t_vb=".
 set visualbell           " don't beep
 set wildmenu           " visual autocomplete for command menu http://dougblack.io/words/a-good-vimrc.html
 
+if has('python')
+    " https://github.com/globaleaks/GlobaLeaks/wiki/code-style-guidelines-for-globaleaks-backend-development
+    set foldmethod=indent
+    set foldlevel=99
+    set textwidth=79
+endif
+
 "colorscheme vividchalk
 "colorscheme xoria256
 colorscheme badwolf
@@ -129,7 +136,7 @@ else
     let g:ctrlp_working_path_mode = 0
 
     let g:ctrlp_custom_ignore = {
-                \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|log$\|test$',
+                \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|log$\|test\|node_modules\|vendor$',
                 \ 'file': '\.exe$\|\.so$\|\.dll$\|\.jpg$\|\.gif$\|\.png\|.xls$',
                 \ }
 endif

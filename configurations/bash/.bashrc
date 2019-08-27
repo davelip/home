@@ -150,10 +150,14 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Vagrant Alias
 alias v='cd /var/www/Vagrant';
+alias d='cd /var/www/docker';
 alias vup='vagrant up';
 alias vht='vagrant halt';
 alias vsh='vagrant ssh';
 alias vbu='vagrant box update';
+
+# GIT alias
+alias gitpushall='git push && git push --tags';
 
 # clipboard alias 
 # http://jetpackweb.com/blog/2009/09/23/pbcopy-in-ubuntu-command-line-clipboard/
@@ -186,7 +190,7 @@ fi
 
 export EDITOR="/usr/bin/vi"
 
-export PATH="/usr/local/heroku/bin:~/.composer/vendor/bin:~/bin:${PATH:+:${PATH}}";
+export PATH="~/.local/bin:~/.composer/vendor/bin:~/bin:${PATH:+:${PATH}}";
 alias homestead=~/.composer/vendor/bin/homestead
 
 if [ -f ~/.bash_path.local ]; then
