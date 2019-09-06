@@ -4,7 +4,8 @@ if exists(':Bundle')
 
     Bundle 'Buffergator'
 
-    Bundle 'minibufexpl.vim'
+    "Bundle 'minibufexpl.vim'
+    Bundle 'fholgado/minibufexpl.vim'
 
     Bundle 'toggle_mouse'
 
@@ -20,7 +21,7 @@ if exists(':Bundle')
 
     "Plugin 'debugger.vim'
     Bundle 'wincent/Command-T'
-    Bundle 'stephpy/vim-php-cs-fixer'
+    "Bundle 'stephpy/vim-php-cs-fixer'
 
     "Bundle 'powerline/powerline'
 
@@ -33,7 +34,7 @@ if exists(':Bundle')
 
     Bundle "ervandew/supertab"
 
-    Bundle 'chase/vim-ansible-yaml'
+    "Bundle 'chase/vim-ansible-yaml'
 
     "Bundle 'slim-template/vim-slim.git'
 

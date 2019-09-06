@@ -91,8 +91,9 @@ if has('mouse')
   set mouse=a
 endif
 
-" phpunit compilation
-com! -nargs=* Phpunit make -c app <q-args> | cw
+"" TBRemoved
+""" phpunit compilation
+""com! -nargs=* Phpunit make -c app <q-args> | cw
 
 " ===================================
 " Autocommands
@@ -143,7 +144,8 @@ else
                 \ }
 endif
 
-let g:symfony_enable_shell_mapping = 1
+"" TBRemoved
+""let g:symfony_enable_shell_mapping = 1
 
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
 
