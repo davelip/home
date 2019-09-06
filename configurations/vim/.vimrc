@@ -123,6 +123,8 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 let g:miniBufExplorerAutoStart = 1
 let g:miniBufExplorerHideWhenDiff = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplMapCTabSwitchWindows = 1
 
 let g:pdv_cfg_php4always=0 "using php5 doc tags
 

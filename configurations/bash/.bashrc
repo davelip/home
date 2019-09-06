@@ -164,6 +164,10 @@ alias gitpushall='git push && git push --tags';
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
+# Meteo
+alias wprato='curl http://v2.wttr.in/Prato,Italy'
+alias wrasora='curl http://v2.wttr.in/Rasora,Italy'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.

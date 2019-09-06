@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/david/Downloads/progetti/MyAV/MyAv_stime_dashboard/Production/Tools/imglab'
-let g:netrw_dirhist_2='/home/david/Downloads/progetti/MyAV/MyAv_stime_dashboard/Production/Tools'
-let g:netrw_dirhist_3='/home/david/Downloads/progetti/MyAV/MyAv_stime_dashboard/Production/Tools/imglab'
-let g:netrw_dirhist_4='/home/david/Downloads/progetti/MyAV/MyAv_stime_dashboard/Production/Tools'
-let g:netrw_dirhist_5='/home/david/Downloads/progetti/MyAV/MyAv_stime_dashboard/Production/Tools/imglab'
-let g:netrw_dirhist_6='/home/david/Downloads/progetti/MyAV/MyAv_stime_dashboard/Production/Tools/imglab/.github'
-let g:netrw_dirhist_7='/var/www/app/angular/mike-process-master-client/src/tools/imglab/dist/js'
-let g:netrw_dirhist_8='/var/www/app/laravel/mike-process-master-server/bootstrap'
-let g:netrw_dirhist_9='/var/www/app/laravel/mike-process-master-server/bootstrap/cache'
+let g:netrw_dirhist_cnt =0
