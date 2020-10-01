@@ -342,17 +342,6 @@ else
 endif
 " }}}
 
-"""""""""""""""""
-" Abbreviations "
-"""""""""""""""""
-
-"abbrev pft PHPUnit_Framework_TestCase
- 
-"abbrev gm !php artisan generate:model
-"abbrev gc !php artisan generate:controller
-"abbrev gmig !php artisan generate:migration
- 
- 
 """"""""
 " CALL "
 """"""""
@@ -372,23 +361,6 @@ function! FacadeLookup()
 endfunction
 nmap ,lf :call FacadeLookup()<cr>
 
-" Prepare a new PHP class
-function! Class()
-    let name = input('Class name? ')
-    let namespace = input('Any Namespace? ')
-
-    if strlen(namespace)
-        exec 'normal i<?php namespace ' . namespace . ';
-    else
-        exec 'normal i<?php
-    endif
-
-    " Open class
-    exec 'normal iclass ' . name . ' {^M}^[O^['
-
-    exec 'normal i^M    public function __construct()^M{^M ^M}^['
-endfunction
-nmap ,1  :call Class()<cr>
 " }}}
 
 

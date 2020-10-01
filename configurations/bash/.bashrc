@@ -139,6 +139,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=always'
 fi
 
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -148,9 +151,6 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Vagrant Alias
-alias v='cd /var/www/Vagrant';
-alias d='cd /var/www/docker';
 alias vup='vagrant up';
 alias vht='vagrant halt';
 alias vsh='vagrant ssh';
@@ -164,9 +164,10 @@ alias gitpushall='git push && git push --tags';
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
-# Meteo
-alias wprato='curl http://v2.wttr.in/Prato,Italy'
-alias wrasora='curl http://v2.wttr.in/Rasora,Italy'
+# Kubernetes
+source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
+alias k=kubectl
+complete -F __start_kubectl k
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -193,9 +194,7 @@ fi
 #[ -r /home/david/.byobu/prompt ] && . /home/david/.byobu/prompt   #byobu-prompt#
 
 export EDITOR="/usr/bin/vi"
-
-export PATH="~/.local/bin:~/.composer/vendor/bin:~/bin:${PATH:+:${PATH}}";
-alias homestead=~/.composer/vendor/bin/homestead
+export PATH="~/bin:${PATH:+:${PATH}}";
 
 if [ -f ~/.bash_path.local ]; then
     . ~/.bash_path.local

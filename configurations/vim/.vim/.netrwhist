@@ -1,2 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/var/code/acelli-extremeautomation/acelli-softec/infra/rancher'
+let g:netrw_dirhist_0='/var/code/acelli-extremeautomation/acelli-old'
+let g:netrw_dirhist_9='/var/code/acelli-extremeautomation/acelli-softec/infra/rancher/manifests'
+let g:netrw_dirhist_8='/var/code/acelli-extremeautomation/acelli-softec/infra/rancher'
+let g:netrw_dirhist_7='/var/code/acelli-extremeautomation/acelli-softec/build/cicd/generic-artifact-image-pipe'
+let g:netrw_dirhist_6='/home/david/Downloads/progetti/ACelli - Extreme Automation/repositories/acelli-softec/build/telegraf-fork/cicd/telegraf-fork-pipe'
+let g:netrw_dirhist_5='/home/david/Downloads/progetti/ACelli - Extreme Automation/repositories/acelli/red.acelli.eriot/cloud-components-installation-data/telegraf'
+let g:netrw_dirhist_4='/home/david/Downloads/progetti/ACelli - Extreme Automation/repositories/acelli/red.acelli.eriot/cloud-components-installation-data'
+let g:netrw_dirhist_3='/home/david/Downloads/progetti/ACelli - Extreme Automation/repositories/acelli-softec/red.acelli.eriot/cloud-admin-gui/admin-gui-vaadin'
+let g:netrw_dirhist_2='/home/david/Downloads/progetti/ACelli - Extreme Automation/repositories/acelli-softec/red.acelli.eriot/devops-sandbox/cicd/generic-artifact-pipe'
