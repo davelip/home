@@ -1,2 +1,2 @@
 #!/bin/sh
-ctags -R --fields=+aimS --languages=php --exclude=vendor/ --exclude=test/
+ctags -R --fields=+aimS --languages=php --exclude=vendor/ --exclude=tests

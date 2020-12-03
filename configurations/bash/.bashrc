@@ -200,3 +200,4 @@ if [ -f ~/.bash_path.local ]; then
     . ~/.bash_path.local
 fi
 
+alias lzd='lazydocker'
