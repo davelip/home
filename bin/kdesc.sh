@@ -27,6 +27,7 @@ else
     echo "" + ${K8S_NAMESPACE}
     echo ""
 
+    echo "kubectl describe ${TYPE} -n ${K8S_NAMESPACE} ${1}"
     kubectl describe ${TYPE} -n "${K8S_NAMESPACE}" ${1}
   fi
 fi

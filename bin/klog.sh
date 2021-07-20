@@ -19,6 +19,7 @@ else
     echo "" + ${K8S_NAMESPACE}
     echo ""
 
+    echo "kubectl logs -n ${K8S_NAMESPACE} --follow ${1}"
     kubectl logs -n "${K8S_NAMESPACE}" --follow ${1}
   fi
 fi

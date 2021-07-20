@@ -18,5 +18,6 @@ else
   echo "" + ${K8S_NAMESPACE}
   echo ""
 
+  echo "kubectl get ${TYPE} -n ${K8S_NAMESPACE}"
   kubectl get ${TYPE} -n "${K8S_NAMESPACE}"
 fi

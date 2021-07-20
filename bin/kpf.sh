@@ -35,6 +35,7 @@ else
     echo "" + ${K8S_NAMESPACE}
     echo ""
 
+    echo "kubectl port-forward -n $K8S_NAMESPACE $1 ${PORT_OUT}:${PORT_IN}"
     kubectl port-forward -n "$K8S_NAMESPACE" $1 ${PORT_OUT}:${PORT_IN}
   fi
 fi

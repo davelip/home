@@ -18,6 +18,7 @@ then
     echo "Environment variable \$K8S_NAMESPACE is empty"
   else
 
+    echo "kubectl delete all --all -n ${K8S_NAMESPACE} && docker images prune -a --all"
     kubectl delete all --all -n "${K8S_NAMESPACE}" && docker images prune -a --all
   fi
 fi

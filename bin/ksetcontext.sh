@@ -10,5 +10,6 @@ else
   echo "" + ${K3_CLUSTER_NAME}
   echo ""
 
+  echo "kubectl config use-context k3d-$K3_CLUSTER_NAME"
   kubectl config use-context "k3d-$K3_CLUSTER_NAME"
 fi

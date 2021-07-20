@@ -27,6 +27,7 @@ else
     echo "" + ${K8S_NAMESPACE}
     echo ""
 
+    echo "kubectl exec -it -n $K8S_NAMESPACE $1 -- ${TYPE}"
     kubectl exec -it -n "$K8S_NAMESPACE" $1 -- ${TYPE}
   fi
 fi

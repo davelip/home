@@ -1,1 +1,3 @@
 configurations/vim/.vim/bundle/*
+
+./bin/node

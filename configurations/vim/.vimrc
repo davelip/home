@@ -164,7 +164,7 @@ if !exists("g:file_exporer_at_startup")
     augroup END
 endif
 
-let g:snipMate = {}
+let g:snipMate = { 'snippet_version' : 1 }
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['php'] = 'php,symfony2'
 
@@ -389,6 +389,8 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
+    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+    autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
 augroup END
 
 

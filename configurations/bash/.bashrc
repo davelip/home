@@ -164,6 +164,8 @@ alias gitpushall='git push && git push --tags';
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
+alias open='xdg-open'
+
 # Kubernetes
 source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
 alias k=kubectl
@@ -194,10 +196,14 @@ fi
 #[ -r /home/david/.byobu/prompt ] && . /home/david/.byobu/prompt   #byobu-prompt#
 
 export EDITOR="/usr/bin/vi"
-export PATH="~/bin:${PATH:+:${PATH}}";
+export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_191";
+export PATH="${JAVA_HOME}/bin:~/bin:${PATH:+:${PATH}}";
 
 if [ -f ~/.bash_path.local ]; then
     . ~/.bash_path.local
 fi
 
 alias lzd='lazydocker'
+
+# @see https://vitux.com/how-to-see-the-terminal-commands-you-use-most-often-in-debian-10/
+history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head -n 25

@@ -11,5 +11,6 @@ if [ -z "$K3_CLUSTER_NAME" ]
 then
   echo "environment variable \$K3_CLUSTER_NAME empty"
 else
+  echo "k3d cluster start $K3_CLUSTER_NAME"
   k3d cluster start "$K3_CLUSTER_NAME"
 fi
