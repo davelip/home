@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PWD=`pwd`
+echo ${PWD} | xclip -selection clipboard
+echo "${PWD} copiato in memoria"

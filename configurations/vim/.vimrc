@@ -416,3 +416,9 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 " }}}
+
+"
+" 20210927 https://github.com/peitalin/vim-jsx-typescript
+"
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact

@@ -158,6 +158,10 @@ alias vbu='vagrant box update';
 
 # GIT alias
 alias gitpushall='git push && git push --tags';
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
 
 # clipboard alias 
 # http://jetpackweb.com/blog/2009/09/23/pbcopy-in-ubuntu-command-line-clipboard/
@@ -197,13 +201,20 @@ fi
 
 export EDITOR="/usr/bin/vi"
 export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_191";
-export PATH="${JAVA_HOME}/bin:~/bin:${PATH:+:${PATH}}";
+export PATH="${JAVA_HOME}/bin:~/jpm/bin:~/bin:${PATH:+:${PATH}}";
 
 if [ -f ~/.bash_path.local ]; then
     . ~/.bash_path.local
 fi
 
 alias lzd='lazydocker'
+alias docknpmi='docker run -it --rm -v "$PWD":/app -w /app node:17 npm install'
+alias docknpms='docker run -it --rm -v "$PWD":/app -w /app node:17 npm run start'
+alias docknpmb='docker run -it --rm -v "$PWD":/app -w /app bash'
+
+#figlet "CIAO!"
+#sl
+#fortune | cowsay -f tux
 
 # @see https://vitux.com/how-to-see-the-terminal-commands-you-use-most-often-in-debian-10/
-history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head -n 25
+# history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head -n 25

@@ -45,5 +45,8 @@ if exists(':Bundle')
     Bundle 'iamcco/markdown-preview.nvim'
 
     Plugin 'editorconfig/editorconfig-vim'
+
+    Plugin 'leafgarland/typescript-vim'
+    Plugin 'peitalin/vim-jsx-typescript'
 end
 "}}}
