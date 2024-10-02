@@ -41,91 +41,93 @@ case "$TERM" in
     screen*) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-force_color_prompt=yes
+## uncomment for a colored prompt, if the terminal has the capability; turned
+## off by default to not distract the user: the focus in a terminal window
+## should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+#
+#BLACK="\[\033[0;38m\]"
+#RED="\[\033[0;31m\]"
+#RED_BOLD="\[\033[01;31m\]"
+#BLUE="\[\033[01;34m\]"
+#GREEN="\[\033[0;32m\]"
+#parse_git_branch () {
+#  git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (git::\1)#'
+#}
+#parse_svn_branch() {
+#  svn info 2>/dev/null | sed -ne 's#^Relative URL: ##p'
+#  #parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk '{print " (svn::"$1")" }'
+#}
+#parse_svn_url() {
+#  svn info 2>/dev/null | sed -ne 's#^URL: ##p'
+#}
+#parse_svn_repository_root() {
+#  svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
+#}
+#
+#if [ -n "$force_color_prompt" ]; then
+#    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+#    # We have color support; assume it's compliant with Ecma-48
+#    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+#    # a case would tend to support setf rather than setaf.)
+#    color_prompt=yes
+#    else
+#    color_prompt=
+#    fi
+#fi
+#
+#if [ "$color_prompt" = yes ]; then
+#    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#    export PS1='${debian_chroot:+($debian_chroot)}$GREEN\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] [$RED_BOLD\$(parse_git_branch)\$(parse_svn_branch)$BLACK] \$ '
+#else
+#    export PS1='${debian_chroot:+($debian_chroot)}$GREEN\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] [$RED_BOLD\$(parse_git_branch)\$(parse_svn_branch)$BLACK] \$ '
+#    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w [\$(parse_git_branch)\$(parse_svn_branch)] \$ '
+#fi
+#unset color_prompt force_color_prompt
+#
+#
+## If this is an xterm set the title to user@host:dir
+#case "$TERM" in
+#xterm*|rxvt*|screen*)
+#    export PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#    ;;
+#*)
+#    ;;
+#esac
+#
+#
+#t_branch() {
+#  local branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+#  if [[ -n $branch ]]; then
+#    echo -e " «$branch» "
+#  fi
+#}
+#
+## Ensure that we're in bash, in a byobu environment
+#if [ -n "$BASH" ]; then
+#  byobu_prompt_status() { local e=$?; [ $e != 0 ] && echo -e "$e "; }
+#  [ -n "$BYOBU_CHARMAP" ] || BYOBU_CHARMAP=$(locale charmap 2>/dev/null || echo)
+#  case "$BYOBU_DISTRO" in
+#    "Ubuntu")
+#      # Use Ubuntu colors (grey / aubergine / orange)
+#      PS1="${debian_chroot:+($debian_chroot)}\[\e[38;5;202m\]\$(byobu_prompt_status)\[\e[38;5;245m\]\u\[\e[00m\]@\[\e[38;5;172m\]\h\[\e[00m\] \[\e[38;5;141m\]\$(parse_git_branch)\$(parse_svn_branch)\[\e[00m\]\[\e[38;5;5m\]\w\[\e[00m\]: "
+#      export GREP_COLORS="ms=01;38;5;202:mc=01;31:sl=:cx=:fn=01;38;5;132:ln=32:bn=32:se=00;38;5;242"
+#      export LESS_TERMCAP_mb=$(printf '\e[01;31m')       # enter blinking mode – red
+#      export LESS_TERMCAP_md=$(printf '\e[01;38;5;180m') # enter double-bright mode – bold light orange
+#      export LESS_TERMCAP_me=$(printf '\e[0m')           # turn off all appearance modes (mb, md, so, us)
+#      export LESS_TERMCAP_se=$(printf '\e[0m')           # leave standout mode
+#      export LESS_TERMCAP_so=$(printf '\e[03;38;5;202m') # enter standout mode – orange background highlight (or italics)
+#      export LESS_TERMCAP_ue=$(printf '\e[0m')           # leave underline mode
+#      export LESS_TERMCAP_us=$(printf '\e[04;38;5;139m') # enter underline mode – underline aubergine
+#    ;;
+#    *)
+#      # Use nice colors (green / red / blue)
+#      PS1="${debian_chroot:+($debian_chroot)}\[\e[31m\]\$(byobu_prompt_status)\[\e[00;32m\]\u\[\e[0m\]@\[\e[00;31m\]\h\[\e[0m\]:\[\e[00;36m\]\w\[\e[0m\]\$ "
+#    ;;
+#  esac
+#fi
 
-BLACK="\[\033[0;38m\]"
-RED="\[\033[0;31m\]"
-RED_BOLD="\[\033[01;31m\]"
-BLUE="\[\033[01;34m\]"
-GREEN="\[\033[0;32m\]"
-parse_git_branch () {
-  git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (git::\1)#'
-}
-parse_svn_branch() {
-  svn info 2>/dev/null | sed -ne 's#^Relative URL: ##p'
-  #parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk '{print " (svn::"$1")" }'
-}
-parse_svn_url() {
-  svn info 2>/dev/null | sed -ne 's#^URL: ##p'
-}
-parse_svn_repository_root() {
-  svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
-}
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    # We have color support; assume it's compliant with Ecma-48
-    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    # a case would tend to support setf rather than setaf.)
-    color_prompt=yes
-    else
-    color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    export PS1='${debian_chroot:+($debian_chroot)}$GREEN\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] [$RED_BOLD\$(parse_git_branch)\$(parse_svn_branch)$BLACK] \$ '
-else
-    export PS1='${debian_chroot:+($debian_chroot)}$GREEN\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] [$RED_BOLD\$(parse_git_branch)\$(parse_svn_branch)$BLACK] \$ '
-    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w [\$(parse_git_branch)\$(parse_svn_branch)] \$ '
-fi
-unset color_prompt force_color_prompt
-
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*|screen*)
-    export PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-
-t_branch() {
-  local branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-  if [[ -n $branch ]]; then
-    echo -e " «$branch» "
-  fi
-}
-
-# Ensure that we're in bash, in a byobu environment
-if [ -n "$BASH" ]; then
-  byobu_prompt_status() { local e=$?; [ $e != 0 ] && echo -e "$e "; }
-  [ -n "$BYOBU_CHARMAP" ] || BYOBU_CHARMAP=$(locale charmap 2>/dev/null || echo)
-  case "$BYOBU_DISTRO" in
-    "Ubuntu")
-      # Use Ubuntu colors (grey / aubergine / orange)
-      PS1="${debian_chroot:+($debian_chroot)}\[\e[38;5;202m\]\$(byobu_prompt_status)\[\e[38;5;245m\]\u\[\e[00m\]@\[\e[38;5;172m\]\h\[\e[00m\] \[\e[38;5;141m\]\$(parse_git_branch)\$(parse_svn_branch)\[\e[00m\]\[\e[38;5;5m\]\w\[\e[00m\]: "
-      export GREP_COLORS="ms=01;38;5;202:mc=01;31:sl=:cx=:fn=01;38;5;132:ln=32:bn=32:se=00;38;5;242"
-      export LESS_TERMCAP_mb=$(printf '\e[01;31m')       # enter blinking mode – red
-      export LESS_TERMCAP_md=$(printf '\e[01;38;5;180m') # enter double-bright mode – bold light orange
-      export LESS_TERMCAP_me=$(printf '\e[0m')           # turn off all appearance modes (mb, md, so, us)
-      export LESS_TERMCAP_se=$(printf '\e[0m')           # leave standout mode
-      export LESS_TERMCAP_so=$(printf '\e[03;38;5;202m') # enter standout mode – orange background highlight (or italics)
-      export LESS_TERMCAP_ue=$(printf '\e[0m')           # leave underline mode
-      export LESS_TERMCAP_us=$(printf '\e[04;38;5;139m') # enter underline mode – underline aubergine
-    ;;
-    *)
-      # Use nice colors (green / red / blue)
-      PS1="${debian_chroot:+($debian_chroot)}\[\e[31m\]\$(byobu_prompt_status)\[\e[00;32m\]\u\[\e[0m\]@\[\e[00;31m\]\h\[\e[0m\]:\[\e[00;36m\]\w\[\e[0m\]\$ "
-    ;;
-  esac
-fi
+. ~/.bash_prompt
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -143,9 +145,11 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias clearrecentfiles='rm ~/.local/share/recently-used.xbel'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -200,11 +204,16 @@ fi
 #[ -r /home/david/.byobu/prompt ] && . /home/david/.byobu/prompt   #byobu-prompt#
 
 export EDITOR="/usr/bin/vi"
-export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_191";
-export PATH="${JAVA_HOME}/bin:~/jpm/bin:~/bin:${PATH:+:${PATH}}";
+#export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_191";
+export COMPOSER_PATH="/home/david/.config/composer/";
+export PATH="${COMPOSER_PATH}/vendor/bin:~/bin:${PATH:+:${PATH}}";
 
 if [ -f ~/.bash_path.local ]; then
     . ~/.bash_path.local
+fi
+
+if [ -f /var/code/projects/wpvip/.bash_vip.local ]; then
+    . /var/code/projects/wpvip/.bash_vip.local
 fi
 
 alias lzd='lazydocker'
@@ -218,3 +227,46 @@ alias docknpmb='docker run -it --rm -v "$PWD":/app -w /app bash'
 
 # @see https://vitux.com/how-to-see-the-terminal-commands-you-use-most-often-in-debian-10/
 # history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head -n 25
+
+
+alias p="local-env-project"
+alias pd=". local-env-project-directory"
+alias cli="local-env-cli"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# BEGIN SNIPPET: Magento Cloud CLI configuration
+HOME=${HOME:-'/home/david'}
+export PATH="$HOME/"'.magento-cloud/bin':"$PATH"
+if [ -f "$HOME/"'.magento-cloud/shell-config.rc' ]; then . "$HOME/"'.magento-cloud/shell-config.rc'; fi # END SNIPPET
+
+# docker-sync
+# https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
+if which ruby >/dev/null && which gem >/dev/null; then
+  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
+# kubectx and kubens
+# @see https://github.com/ahmetb/kubectx
+#export PATH=~/.kubectx:\$PATH
+# /kubectx and kubens
+. "$HOME/.cargo/env"
+
+# circleci completion bash
+. "$HOME/.circleci/.bash_completion_circleci"
+
+# laravel sails
+# @see https://laravel.com/docs/10.x/sail#configuring-a-shell-alias
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+
+alias phpcs='phpcs  --error-severity=1 --warning-severity=8 --ignore=*/build/*.js'
+
+alias beep='echo -e "\a"'
+alias beep2='tput bel'
+alias beepog='paplay /usr/share/sounds/freedesktop/stereo/bell.oga'
+alias beepsox1='play -n synth 0.1 sine 880 vol 0.5'
+alias beepsox2='play -n synth pl G2 pl B2 pl D3 pl G3 pl D4 pl G4 delay 0 .05 .1 .15 .2 .25 remix - fade 0 4 .1 norm -1'
+
+export GCM_CREDENTIAL_STORE="secretservice"
