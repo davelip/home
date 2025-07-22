@@ -176,7 +176,10 @@ alias open='xdg-open'
 
 # Kubernetes
 source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
-alias k=kubectl
+alias k='kubectl'
+##kn() {
+    ##kubectl "$@" --all-namespaces
+##}
 complete -F __start_kubectl k
 
 # Alias definitions.
@@ -205,8 +208,12 @@ fi
 
 export EDITOR="/usr/bin/vi"
 #export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_191";
-export COMPOSER_PATH="/home/david/.config/composer/";
+export COMPOSER_PATH="/home/david.lippi/.config/composer/";
 export PATH="${COMPOSER_PATH}/vendor/bin:~/bin:${PATH:+:${PATH}}";
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 if [ -f ~/.bash_path.local ]; then
     . ~/.bash_path.local
@@ -220,6 +227,13 @@ alias lzd='lazydocker'
 alias docknpmi='docker run -it --rm -v "$PWD":/app -w /app node:17 npm install'
 alias docknpms='docker run -it --rm -v "$PWD":/app -w /app node:17 npm run start'
 alias docknpmb='docker run -it --rm -v "$PWD":/app -w /app bash'
+
+alias dockcleancontainers='docker rm $(docker ps -q --filter "status=exited")'
+alias dockcleanimages='docker rmi -f $(docker images -f "dangling=true" -q)'
+alias dockcleanvolumes='docker volume rm $(docker volume ls -q | grep -Ei "(\w){64}")'
+
+alias docksystemdf='docker system df -v'
+
 
 #figlet "CIAO!"
 #sl
