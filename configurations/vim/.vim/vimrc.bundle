@@ -2,60 +2,35 @@
 if exists(':Bundle')
     Bundle 'gmarik/vundle'
 
-    "Bundle 'Buffergator'
     Plugin 'Buffergator'
 
-    "Bundle 'minibufexpl.vim'
-    "Bundle 'fholgado/minibufexpl.vim'
     Plugin 'fholgado/minibufexpl.vim'
 
-    "Bundle 'toggle_mouse'
     Plugin 'toggle_mouse'
 
-    "Bundle 'Lokaltog/vim-easymotion'
     Plugin 'Lokaltog/vim-easymotion'
 
-    "Bundle 'scrooloose/nerdtree.git'
     Plugin 'scrooloose/nerdtree.git'
 
-    "Bundle 'kien/ctrlp.vim'
     Plugin 'kien/ctrlp.vim'
 
     Plugin 'shawncplus/phpcomplete.vim'
 
-    "Bundle 'vim-scripts/Conque-Shell'
     Plugin 'Conque-Shell'
 
-    "Plugin 'debugger.vim'
-    "Bundle 'wincent/Command-T'
-    Plugin 'Command-T'
-    "Bundle 'stephpy/vim-php-cs-fixer'
+    Bundle 'wincent/Command-T'
 
-    "Bundle 'powerline/powerline'
-
-    "Bundle 'MarcWeber/vim-addon-mw-utils'
     Plugin 'MarcWeber/vim-addon-mw-utils'
-    "Bundle "tomtom/tlib_vim'
     Plugin 'tomtom/tlib_vim'
-    "Bundle 'garbas/vim-snipmate'
     Plugin 'garbas/vim-snipmate'
-    "Bundle 'honza/vim-snippets'
     Plugin 'honza/vim-snippets'
 
-    "Bundle 'vim-scripts/taglist.vim'
     Plugin 'vim-scripts/taglist.vim'
 
-    "Bundle 'ervandew/supertab'
     Plugin 'supertab'
 
-    "Bundle 'chase/vim-ansible-yaml'
-
-    "Bundle 'slim-template/vim-slim.git'
-
-    "Bundle 'sjl/badwolf'
     Plugin 'sjl/badwolf'
 
-    "Bundle 'joonty/vdebug.git'
     Plugin 'joonty/vdebug.git'
 
     Plugin 'iamcco/markdown-preview.nvim'
