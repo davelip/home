@@ -123,19 +123,17 @@ nnoremap <silent> <C-p> :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 map <leader>f :Rg<Space>
 
-" NERDTree
-if !exists("g:file_exporer_at_startup")
-    let g:NERDTreeHijackNetrw=0
+" netrw disattivato: l'explorer è NERDTree
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
 
-    " use 'vim' in your directory and it'll open a nerdtree automatically
-    autocmd vimenter * if !argc() || argv() == ['.'] | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+" vim senza argomenti → NERDTree
+autocmd VimEnter * if !argc() && !exists('s:std_in') | NERDTree | endif
+" vim <directory> → NERDTree su quella directory
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in')
+      \ | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
-    " Disable netrw's autocmd, since we're ALWAYS using NERDTree
-    runtime plugin/netRwPlugin.vim
-    augroup FileExplorer
-      au!
-    augroup END
-endif
 nmap <C-n> :NERDTreeToggle<cr>
 " @see http://superuser.com/questions/195022/vim-how-to-synchronize-nerdtree-with-current-opened-tab-file-path
 map <leader>r :NERDTreeFind<cr>
