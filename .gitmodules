@@ -16,3 +16,7 @@
 [submodule "configurations/vim/.vim/pack/plugins/start/markdown-preview.nvim"]
 	path = configurations/vim/.vim/pack/plugins/start/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
+[submodule "configurations/vim/.vim/pack/plugins/start/fzf"]
+	path = configurations/vim/.vim/pack/plugins/start/fzf
+	url = https://github.com/junegunn/fzf
+	ignore = dirty
