@@ -1,0 +1,10 @@
+vip
+gemini-cli
+codex
+cli
+concat-cli
+corepack
+npm-check-updates
+npm
+retire
+uglifyjs

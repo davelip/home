@@ -1,0 +1,214 @@
+# semplici
+for s in authenticator bitwarden bpytop circleci ffmpeg figlet gimp \
+  google-chat-desktop insomnia mdview mutt mysql-workbench-community \
+  poedit postman simplenote spotify sqlitebrowser vlc; do
+  sudo snap install "$s" || echo "FALLITO: $s" >> ~/snap-falliti.txt
+done
+
+# classic
+for s in aws-cli codium flutter gitkraken go google-cloud-cli helm \
+  kubeadm kubectl; do
+  sudo snap install --classic "$s" || echo "FALLITO: $s" >> ~/snap-falliti.txt
+done
+
+
+sudo apt install -y \
+  7zip adb android-sdk-platform-tools-common apache2-utils aptitude \
+  apt-rdepends apt-show-versions bat blueman bluez-tools build-essential \
+  byobu cmake curl default-jdk exiv2 exuberant-ctags eza fd-find filezilla \
+  flatpak fzf gdb-multiarch gdebi-core git git-filter-repo git-flow glab \
+  gnome-clocks gnome-sound-recorder gnome-sushi gnome-tweaks gnome-weather \
+  gparted hplip hplip-gui htop inxi jq kcachegrind kid3-qt lynx \
+  mariadb-client mmv moreutils ncdu net-tools ninja-build ocaml \
+  openjdk-17-jdk pandoc pipx pkg-config plocate powertop putty-tools \
+  python-is-python3 python3-dev python3-pip python3-venv python3-virtualenv \
+  qpdf rclone ripgrep shellcheck simplescreenrecorder sl sox sqlite3 \
+  sshpass tesseract-ocr texinfo unzip vim whois wkhtmltopdf xclip yamllint \
+  zip zoxide zram-config cowsay
+
+# nvm + node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+nvm install --lts
+
+npm i -g @automattic/vip gemini-cli @openai/codex npm-check-updates retire uglify-js
+
+# rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# pipx e i suoi pacchetti
+sudo apt install pipx
+pipx install rich-cli
+
+
+
+mkdir -p ~/migrazione/keyrings
+rsync -avh david.lippi@192.168.1.18:/usr/share/keyrings/ ~/migrazione/keyrings/usr/
+rsync -avh --rsync-path='sudo rsync' david.lippi@192.168.1.18:/etc/apt/keyrings/ ~/migrazione/keyrings/etc/ 2>/dev/null \
+  || rsync -avh david.lippi@10.26.0.72:/etc/apt/keyrings/ ~/migrazione/keyrings/etc/
+
+# Installa quelle che servono in un posto solo, pulito
+sudo install -d -m 755 /etc/apt/keyrings
+sudo cp ~/migrazione/keyrings/usr/{brave-browser-archive-keyring.gpg,termius-2026.gpg,claude-desktop-archive-keyring.asc,lens-archive-keyring.gpg,dropbox.gpg} /etc/apt/keyrings/ 2>/dev/null
+sudo cp ~/migrazione/keyrings/etc/{windsurf-stable.gpg,ddev.gpg,antigravity-repo-key.gpg,docker.asc} /etc/apt/keyrings/ 2>/dev/null
+ls -la /etc/apt/keyrings/
+
+
+curl -sfI https://download.docker.com/linux/ubuntu/dists/resolute/Release >/dev/null && echo "Docker: resolute OK" || echo "Docker: usa noble"
+curl -sf https://packages.microsoft.com/repos/azure-cli/dists/ | grep -o 'resolute\|noble' | sort -u
+
+
+
+curl -sfI https://download.docker.com/linux/ubuntu/dists/resolute/Release >/dev/null && echo "Docker: resolute OK" || echo "Docker: usa noble"
+curl -sf https://packages.microsoft.com/repos/azure-cli/dists/ | grep -o 'resolute\|noble' | sort -u
+
+
+
+# --- Brave ---
+sudo tee /etc/apt/sources.list.d/brave-browser.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://brave-browser-apt-release.s3.brave.com/
+Suites: stable
+Components: main
+Signed-By: /etc/apt/keyrings/brave-browser-archive-keyring.gpg
+EOF
+
+# --- Google Chrome (chiave fresca) ---
+curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /etc/apt/keyrings/google-chrome.gpg
+sudo tee /etc/apt/sources.list.d/google-chrome.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://dl.google.com/linux/chrome/deb/
+Suites: stable
+Components: main
+Architectures: amd64
+Signed-By: /etc/apt/keyrings/google-chrome.gpg
+EOF
+
+# --- Chrome Remote Desktop (stessa chiave Google) ---
+sudo tee /etc/apt/sources.list.d/chrome-remote-desktop.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://dl.google.com/linux/chrome-remote-desktop/deb/
+Suites: stable
+Components: main
+Architectures: amd64
+Signed-By: /etc/apt/keyrings/google-chrome.gpg
+EOF
+
+# --- Docker (cambia resolute→noble se il check sopra dice così) ---
+sudo tee /etc/apt/sources.list.d/docker.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: resolute
+Components: stable
+Architectures: amd64
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+# --- ddev ---
+sudo tee /etc/apt/sources.list.d/ddev.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://pkg.ddev.com/apt/
+Suites: *
+Components: *
+Signed-By: /etc/apt/keyrings/ddev.gpg
+EOF
+
+# --- Sublime Text (chiave fresca) ---
+curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/sublimehq.gpg
+sudo tee /etc/apt/sources.list.d/sublime-text.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://download.sublimetext.com/
+Suites: apt/stable/
+Components:
+Signed-By: /etc/apt/keyrings/sublimehq.gpg
+EOF
+
+# --- Termius ---
+sudo tee /etc/apt/sources.list.d/termius.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://deb.termius.com
+Suites: squeeze
+Components: main
+Architectures: amd64
+Signed-By: /etc/apt/keyrings/termius-2026.gpg
+EOF
+
+# --- Lens ---
+sudo tee /etc/apt/sources.list.d/lens.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://downloads.k8slens.dev/apt/debian
+Suites: stable
+Components: main
+Architectures: amd64
+Signed-By: /etc/apt/keyrings/lens-archive-keyring.gpg
+EOF
+
+# --- Windsurf ---
+sudo tee /etc/apt/sources.list.d/windsurf.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/apt
+Suites: stable
+Components: main
+Architectures: amd64
+Signed-By: /etc/apt/keyrings/windsurf-stable.gpg
+EOF
+
+# --- Antigravity ---
+sudo tee /etc/apt/sources.list.d/antigravity.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/
+Suites: antigravity-debian
+Components: main
+Signed-By: /etc/apt/keyrings/antigravity-repo-key.gpg
+EOF
+
+# --- Claude Desktop ---
+sudo tee /etc/apt/sources.list.d/claude-desktop.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://downloads.claude.ai/claude-desktop/apt/stable
+Suites: stable
+Components: main
+Signed-By: /etc/apt/keyrings/claude-desktop-archive-keyring.asc
+EOF
+
+# --- Codex (chiave dalla vecchia se c'è, guarda in ~/migrazione/keyrings) ---
+sudo tee /etc/apt/sources.list.d/codex.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://persistent.oaistatic.com/codex-app-prod/linux/deb
+Suites: stable
+Components: main
+Signed-By: /etc/apt/keyrings/codex.gpg
+EOF
+
+# --- ngrok (chiave fresca) ---
+curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/keyrings/ngrok.gpg
+sudo tee /etc/apt/sources.list.d/ngrok.sources >/dev/null <<'EOF'
+Types: deb
+URIs: https://ngrok-agent.s3.amazonaws.com
+Suites: buster
+Components: main
+Signed-By: /etc/apt/keyrings/ngrok.gpg
+EOF
+
+# --- Dropbox ---
+sudo tee /etc/apt/sources.list.d/dropbox.sources >/dev/null <<'EOF'
+Types: deb
+URIs: http://linux.dropbox.com/ubuntu
+Suites: disco
+Components: main
+Architectures: i386 amd64
+Signed-By: /etc/apt/keyrings/dropbox.gpg
+EOF
+
+
+
+sudo apt update 2>&1 | grep -E '^(Err|W):' || echo "Tutti i repo OK"
+
+sudo apt install -y brave-browser google-chrome-stable docker-ce docker-ce-cli \
+  containerd.io docker-buildx-plugin docker-compose-plugin ddev sublime-text \
+  termius-app lens windsurf antigravity claude-desktop ngrok dropbox \
+  chrome-remote-desktop
+
+sudo usermod -aG docker david.lippi
+# logout/login per il gruppo docker
+
+

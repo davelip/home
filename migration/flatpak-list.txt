@@ -1,0 +1,7 @@
+Freedesktop Platform	org.freedesktop.Platform	21.08.14	21.08	user
+Mesa	org.freedesktop.Platform.GL.default	21.3.8	21.08	user
+nvidia-510-47-03	org.freedesktop.Platform.GL.nvidia-510-47-03		1.4	user
+nvidia-510-73-05	org.freedesktop.Platform.GL.nvidia-510-73-05		1.4	user
+Intel	org.freedesktop.Platform.VAAPI.Intel		21.08	user
+openh264	org.freedesktop.Platform.openh264	2.1.0	2.0	user
+Yaru Gtk Theme	org.gtk.Gtk3theme.Yaru		3.22	user

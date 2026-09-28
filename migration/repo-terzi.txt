@@ -1,0 +1,68 @@
+[01;31m[Kdeb[m[K [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main
+[01;31m[Kdeb[m[K [arch=amd64 signed-by=/usr/share/keyrings/termius-2023.gpg,/usr/share/keyrings/termius-2026.gpg] https://deb.termius.com squeeze main
+[01;31m[Kdeb[m[K [arch=amd64 signed-by=/etc/apt/keyrings/windsurf-stable.gpg] https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/apt stable main
+[01;31m[Kdeb[m[K [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main
+[01;31m[Kdeb[m[K [signed-by=/etc/apt/keyrings/ddev.gpg] https://pkg.ddev.com/apt/ * *
+[01;31m[Kdeb[m[K [arch=amd64] http://dl.google.com/linux/chrome-remote-desktop/deb/ stable main
+[01;31m[Kdeb[m[K [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ impish main
+[01;31m[Kdeb[m[K [signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main
+[01;31m[Kdeb[m[K [arch=amd64 signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main
+[01;31m[Kdeb[m[K [signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main
+[01;31m[Kdeb[m[K [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main
+[01;31m[Kdeb[m[K [arch=i386,amd64 signed-by=/usr/share/keyrings/dropbox.gpg] http://linux.dropbox.com/ubuntu disco main
+[01;31m[Kdeb[m[K [arch=amd64] https://repo.fortinet.com/repo/7.0/ubuntu xenial multiverse
+[01;31m[Kdeb[m[K https://ppa.launchpadcontent.net/ondrej/php/ubuntu/ jammy main
+[01;31m[Kdeb[m[K [arch=amd64] https://repo.fortinet.com/repo/7.0/ubuntu xenial multiverse
+[01;31m[Kdeb[m[K [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main
+[01;31m[Kdeb[m[K [signed-by=/etc/apt/keyrings/ddev.gpg] https://pkg.ddev.com/apt/ * *
+[01;31m[Kdeb[m[K https://ngrok-agent.s3.amazonaws.com buster main
+[01;31m[Kdeb[m[K [arch=amd64 signed-by=/etc/apt/keyrings/windsurf-stable.gpg] https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/apt stable main
+[01;31m[Kdeb[m[K [arch=amd64 signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main
+[01;31m[Kdeb[m[K [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu   noble stable
+[01;31m[Kdeb[m[K [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main
+[01;31m[Kdeb[m[K http://ppa.launchpad.net/obsproject/obs-studio/ubuntu/ impish main
+[01;31m[Kdeb[m[K https://ngrok-agent.s3.amazonaws.com buster main
+[01;31m[Kdeb[m[K https://download.sublimetext.com/ apt/stable/
+[01;31m[Kdeb[m[K https://ppa.launchpadcontent.net/ufleisch/kid3/ubuntu/ jammy main
+[01;31m[Kdeb[m[K [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x impish main
+[01;31m[Kdeb[m[K-src [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x impish main
+[01;31m[Kdeb[m[K [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu   noble stable
+[01;31m[KURIs[m[K: https://packages.microsoft.com/repos/azure-cli/
+Suites: impish
+Components: main
+[36m[K--[m[K
+[01;31m[KURIs[m[K: https://brave-browser-apt-release.s3.brave.com
+Suites: stable
+Components: main
+[36m[K--[m[K
+[01;31m[KURIs[m[K: https://persistent.oaistatic.com/codex-app-prod/linux/deb
+Suites: stable
+Components: main
+[36m[K--[m[K
+[01;31m[KURIs[m[K: https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu/
+Suites: noble
+Components: main
+[36m[K--[m[K
+[01;31m[KURIs[m[K: https://dl.google.com/linux/chrome-stable/deb/
+Suites: stable
+Components: main
+[36m[K--[m[K
+[01;31m[KURIs[m[K: https://ppa.launchpadcontent.net/safeeyes-team/safeeyes/ubuntu/
+Suites: noble
+Components: main
+[36m[K--[m[K
+[01;31m[KURIs[m[K: https://download.sublimetext.com/
+Suites: apt/stable/
+Components: 
+[36m[K--[m[K
+[01;31m[KURIs[m[K: https://ppa.launchpadcontent.net/ubuntuhandbook1/audio-recorder/ubuntu/
+Suites: noble
+Components: main
+[36m[K--[m[K
+[01;31m[KURIs[m[K: https://ubuntu.mirror.garr.it/ubuntu/
+Suites: noble noble-security
+Components: main restricted universe multiverse
+[36m[K--[m[K
+[01;31m[KURIs[m[K: http://security.ubuntu.com/ubuntu/
+Suites: noble-security
+Components: multiverse universe restricted main

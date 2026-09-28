@@ -1,3 +1,4 @@
 configurations/vim/.vim/bundle/*
 
 ./bin/node
+configurations/vim/.vim/.netrwhist
