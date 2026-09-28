@@ -1,3 +1,18 @@
-[submodule "configurations/vim/.vim/bundle/vundle"]
-	path = configurations/vim/.vim/bundle/vundle
-	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "configurations/vim/.vim/pack/plugins/start/fzf.vim"]
+	path = configurations/vim/.vim/pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "configurations/vim/.vim/pack/plugins/start/nerdtree"]
+	path = configurations/vim/.vim/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule "configurations/vim/.vim/pack/plugins/start/editorconfig-vim"]
+	path = configurations/vim/.vim/pack/plugins/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "configurations/vim/.vim/pack/plugins/start/vim-easymotion"]
+	path = configurations/vim/.vim/pack/plugins/start/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule "configurations/vim/.vim/pack/plugins/start/vdebug"]
+	path = configurations/vim/.vim/pack/plugins/start/vdebug
+	url = https://github.com/vim-vdebug/vdebug
+[submodule "configurations/vim/.vim/pack/plugins/start/markdown-preview.nvim"]
+	path = configurations/vim/.vim/pack/plugins/start/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim
